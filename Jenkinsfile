@@ -5,6 +5,7 @@ node {
     }
    stage('Build') {
     withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.1') {
+     sh 'cd  maven-code-coverage'  
      sh 'mvn clean compile'
       }
     }
