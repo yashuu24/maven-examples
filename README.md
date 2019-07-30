@@ -1,5 +1,13 @@
-## Apache Maven Tutorial
+# Maven – JaCoCo code coverage example
+Maven, JUnit 5 + JaCoCo example.
 
-Source code for mkyong.com Apache Maven tutorial
+Project Link - https://www.mkyong.com/maven/maven-jacoco-code-coverage-example/
 
-https://www.mkyong.com/tutorials/maven-tutorials/
+## How to run this project?
+```
+$ git clone https://github.com/mkyong/maven-examples.git
+$ cd maven-code-coverage
+$ mvn clean test
+
+# view report at 'target/site/jacoco/index.html'
+```
