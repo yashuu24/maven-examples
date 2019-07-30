@@ -1,12 +1,12 @@
 node {
    
    stage('Code Checkout') { 
-     git credentialsId: 'githubID', url: 'https://github.com/itrainbatman/maven-examples.git' 
+     git credentialsId: 'githubID', url: 'https://github.com/itrainbatman/maven-examples.git'
+     sh 'cd  /maven-code-coverage' 
     }
    stage('Build') {
     withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.1') {
-     sh 'cd  maven-code-coverage'  
-     sh 'mvn clean compile'
+      sh 'mvn clean compile'
       }
     }
    stage('Unit Test run') {
