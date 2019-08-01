@@ -14,11 +14,13 @@ node {
      sh 'mvn test'
       } 
     }
-   
+   stage('Sonarqube analysis'){
+      def scannerHome = tool 'javascanner';
    withSonarQubeEnv(credentialsId: 'sonarqubeid') {
     withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.1') {
     sh 'mvn sonar:sonar' 
       }
+     }
     }
   stage("Quality Gate"){
           timeout(time: 1, unit: 'HOURS') {
