@@ -15,7 +15,7 @@ node {
       } 
     }
    stage('Sonarqube analysis'){
-      
+       // sonar block is to be added
     }
   stage("Quality Gate"){
           
