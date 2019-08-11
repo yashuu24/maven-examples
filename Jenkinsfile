@@ -1,7 +1,7 @@
 node {
    
    stage('Code Checkout') { 
-     git credentialsId: 'githubID', url: 'https://github.com/itrainbatman/maven-examples.git'
+     git credentialsId: 'githubID', url: 'https://github.com/itrainjaquar/maven-examples.git'
      
     }
    stage('Build') {
@@ -10,14 +10,14 @@ node {
       }
     }
    stage('Unit Test run') {
-    withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.1') {
+    withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.0') {
      sh 'mvn test'
       } 
     }
    stage('Sonarqube analysis'){
       def scannerHome = tool 'javascanner';
    withSonarQubeEnv(credentialsId: 'ItrainSonar') {
-    withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.1') {
+    withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.0') {
     sh 'mvn sonar:sonar' 
       }
      }
