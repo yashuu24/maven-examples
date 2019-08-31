@@ -15,7 +15,13 @@ node {
       } 
     }
    stage('Sonarqube analysis'){
-       // sonar block is to be added
+     withMaven(jdk: 'JDK-1.8', maven: 'Maven-3.6.1') {
+      sh 'mvn org.jacoco:jacoco-maven-plugin:prepare-agent package sonar:sonar' +
+             ' -Dsonar.host.url=https://sonarcloud.io '+
+             ' -Dsonar.organization=itrainjaquar '+ 
+             ' -Dsonar.login=20fdaa406963ab00719d979d512a587c9207c8a7 '   
+        
+     }  
     }
   stage("Quality Gate"){
           
