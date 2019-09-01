@@ -20,7 +20,7 @@ node {
       -Dsonar.projectKey=Mavenkey \
       -Dsonar.organization=maven-ash \
       -Dsonar.host.url=https://sonarcloud.io \
-      -Dsonar.login=79a3004c6f798f828633f50023801331f34d9422'  
+      -Dsonar.login=373b4b358e28833a0af5b921f3c91250dae9c3df'  
        }  
     }
   stage("Quality Gate"){
